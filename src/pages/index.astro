@@ -2,9 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 
 const impact = [
-  { value: "1B+", label: "Daily transactions engineered" },
+  { value: "1B+", label: "Daily payment transactions volume" },
   { value: "$25B", label: "Monthly money movement" },
-  { value: "99.99%", label: "Payments platform availability" },
+  { value: "99.99%", label: "Ledger platform availability" },
   { value: "20M+", label: "Customers served" }
 ];
 
@@ -16,7 +16,7 @@ const experience = [
     period: "June 2024 - Present",
     highlights: [
       "Designed a distributed multi-datastore payments ledger handling 1B+ daily transactions with sub-XX ms latency.",
-      "Built core banking platforms across ledgering, accounts, notifications, and IAM for 20M+ users.",
+      "Built core banking platforms across payments ledger, accounts, notifications and IAM for 20M+ users.",
       "Drove event-driven transaction architecture adopted by 10+ teams, raising uptime to 99.99%."
     ]
   },
@@ -64,11 +64,11 @@ const earlierExperience = [
 const skillGroups = [
   {
     title: "Platforms & Architecture",
-    items: ["Distributed Systems", "Payments Infrastructure", "DDD", "Event-Driven Systems", "Microservices"]
+    items: ["Distributed Systems", "Payments Infrastructure", "Event-Driven Systems", "Microservices"]
   },
   {
     title: "Languages",
-    items: ["Java", "Golang", "TypeScript", "Python", ".NET", "PHP", "Ruby"]
+    items: ["Java", "Golang", "TypeScript", "Python"]
   },
   {
     title: "Data & Messaging",
@@ -84,21 +84,27 @@ const skillGroups = [
 <Layout>
   <main class="site-shell">
     <section class="hero reveal">
-      <p class="eyebrow">Pranjal Patil</p>
-      <h1>Engineering leader building reliable financial systems at internet scale.</h1>
-      <p class="lede">
-        Head of Engineering (Principal IC) based in Dubai, currently leading core banking and
-        payments platform development at MoniePoint.
-      </p>
-      <div class="cta-row">
-        <a class="button primary" href="mailto:pranjalpatil88@gmail.com">Email</a>
-        <a class="button" href="https://www.linkedin.com/in/pranjalpatil01" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="button" href="/Pranjal-Patil-Resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">Pranjal Patil</p>
+          <h1>Software engineer building reliable systems at internet scale.</h1>
+          <p class="lede">
+            Head of Engineering (Principal IC) based in Dubai, currently leading core banking services platform at MoniePoint.
+          </p>
+          <div class="cta-row">
+            <a class="button primary" href="mailto:pranjalpatil88@gmail.com">Email</a>
+            <a class="button" href="https://www.linkedin.com/in/pranjalpatil01" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="button" href="https://github.com/pranjal-patil-1" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="/pranjal.jpeg" alt="Pranjal Patil" loading="eager" />
+        </div>
       </div>
     </section>
 
     <section class="card reveal delay-1">
-      <h2>Selected Impact</h2>
+      <h2>Scale @ Moniepoint </h2>
       <div class="metrics-grid">
         {impact.map((item) => (
           <article class="metric">
