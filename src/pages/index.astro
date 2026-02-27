@@ -1,0 +1,173 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const impact = [
+  { value: "1B+", label: "Daily transactions engineered" },
+  { value: "$25B", label: "Monthly money movement" },
+  { value: "99.99%", label: "Payments platform availability" },
+  { value: "20M+", label: "Customers served" }
+];
+
+const experience = [
+  {
+    role: "Head of Engineering (Principal IC)",
+    company: "MoniePoint",
+    location: "Dubai, UAE",
+    period: "June 2024 - Present",
+    highlights: [
+      "Designed a distributed multi-datastore payments ledger handling 1B+ daily transactions with sub-XX ms latency.",
+      "Built core banking platforms across ledgering, accounts, notifications, and IAM for 20M+ users.",
+      "Drove event-driven transaction architecture adopted by 10+ teams, raising uptime to 99.99%."
+    ]
+  },
+  {
+    role: "Principal Software Engineer, Senior Engineering Manager",
+    company: "KingMakers (SuperPicks)",
+    location: "Dubai, UAE",
+    period: "February 2022 - June 2024",
+    highlights: [
+      "Launched and scaled fantasy sports products to 4M+ MAU with 30K+ RPS peak traffic.",
+      "Rebuilt IAM into a stateless zero-trust platform, improving P99 latencies by 70%.",
+      "Delivered cloud-cost reductions above 60% while completing zero-downtime migrations."
+    ]
+  },
+  {
+    role: "Senior Software Engineer, Engineering Manager",
+    company: "Careem (an Uber company)",
+    location: "Dubai, UAE",
+    period: "June 2019 - February 2022",
+    highlights: [
+      "Led food delivery supply engineering and integrated ETA ML models to reduce delivery time by 20%.",
+      "Scaled e-commerce search and catalog systems for 50K merchants across MENA.",
+      "Executed Uber Eats data migration (30K merchants) to Careem in three weeks."
+    ]
+  },
+  {
+    role: "Software Engineer",
+    company: "Booking.com",
+    location: "Amsterdam, Netherlands",
+    period: "June 2018 - June 2019",
+    highlights: [
+      "Built large-scale session quality pipelines for 80M+ monthly active users.",
+      "Generated 150M+ ML scoring outputs per day on petabyte-scale data systems."
+    ]
+  }
+];
+
+const earlierExperience = [
+  "Senior Software Engineer, OLA (2016 - 2017)",
+  "Senior Software Engineer, Hem (2015 - 2016)",
+  "Software Engineer, Boomerang Commerce (2014 - 2015)",
+  "R&D Engineer, Tejas Networks (2012 - 2014)"
+];
+
+const skillGroups = [
+  {
+    title: "Platforms & Architecture",
+    items: ["Distributed Systems", "Payments Infrastructure", "DDD", "Event-Driven Systems", "Microservices"]
+  },
+  {
+    title: "Languages",
+    items: ["Java", "Golang", "TypeScript", "Python", ".NET", "PHP", "Ruby"]
+  },
+  {
+    title: "Data & Messaging",
+    items: ["Kafka", "Redis", "MySQL", "PostgreSQL", "Spanner DB", "ClickHouse", "Spark"]
+  },
+  {
+    title: "Cloud & Ops",
+    items: ["GCP", "AWS", "Kubernetes", "Big Data Pipelines", "Reliability Engineering"]
+  }
+];
+---
+
+<Layout>
+  <main class="site-shell">
+    <section class="hero reveal">
+      <p class="eyebrow">Pranjal Patil</p>
+      <h1>Engineering leader building reliable financial systems at internet scale.</h1>
+      <p class="lede">
+        Head of Engineering (Principal IC) based in Dubai, currently leading core banking and
+        payments platform development at MoniePoint.
+      </p>
+      <div class="cta-row">
+        <a class="button primary" href="mailto:pranjalpatil88@gmail.com">Email</a>
+        <a class="button" href="https://www.linkedin.com/in/pranjalpatil01" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="button" href="/Pranjal-Patil-Resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
+      </div>
+    </section>
+
+    <section class="card reveal delay-1">
+      <h2>Selected Impact</h2>
+      <div class="metrics-grid">
+        {impact.map((item) => (
+          <article class="metric">
+            <p class="value">{item.value}</p>
+            <p>{item.label}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="card reveal delay-2">
+      <div class="section-heading">
+        <h2>Professional Experience</h2>
+        <p>Built and operated high-throughput systems across fintech, mobility, and e-commerce.</p>
+      </div>
+      <div class="timeline">
+        {experience.map((job) => (
+          <article class="timeline-item">
+            <header>
+              <p class="role">{job.role}</p>
+              <p class="company">{job.company}</p>
+              <p class="meta">{job.location} | {job.period}</p>
+            </header>
+            <ul>
+              {job.highlights.map((highlight) => <li>{highlight}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+      <div class="earlier">
+        <h3>Earlier Experience</h3>
+        <ul>
+          {earlierExperience.map((job) => <li>{job}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="split reveal delay-3">
+      <article class="card">
+        <h2>Core Skills</h2>
+        <div class="skills-grid">
+          {skillGroups.map((group) => (
+            <div>
+              <h3>{group.title}</h3>
+              <ul>
+                {group.items.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </article>
+      <article class="card">
+        <h2>Education</h2>
+        <div class="education-block">
+          <h3>National Institute of Technology, Karnataka (NITK)</h3>
+          <p>Master of Technology in Computer Science</p>
+          <p>Surathkal, Karnataka | 2010 - 2012</p>
+        </div>
+        <div class="education-block">
+          <h3>University of Mumbai</h3>
+          <p>Bachelor of Technology in Computer Science</p>
+          <p>Mumbai, Maharashtra | 2006 - 2010</p>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer reveal delay-3">
+      <p>Dubai, UAE</p>
+      <p><a href="tel:+971551854920">+971 55 185 4920</a> | <a href="mailto:pranjalpatil88@gmail.com">pranjalpatil88@gmail.com</a></p>
+    </footer>
+  </main>
+</Layout>
