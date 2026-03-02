@@ -1,6 +1,6 @@
 # pranjalpatil.me
 
-Professional personal website for Pranjal Patil, built with Astro and ready for Cloudflare Pages.
+Professional personal website for Pranjal Patil, built with Astro and ready for Cloudflare Workers deployment.
 
 ## Local development
 
@@ -16,25 +16,26 @@ npm run build
 npm run preview
 ```
 
-## Deploy to Cloudflare Pages
+## Deploy to Cloudflare Workers
 
-Use one of the following methods:
-
-### 1) Cloudflare Dashboard
-
-1. Create a new Pages project and connect this GitHub repository.
-2. Use these build settings:
-   - Framework preset: `Astro`
-   - Build command: `npm run build`
-   - Build output directory: `dist`
-   - Node.js version: `20` (or newer supported by Astro)
-3. Deploy.
-
-### 2) Wrangler CLI
+### Wrangler CLI
 
 ```bash
-npm run build
-npx wrangler pages deploy dist --project-name pranjalpatil-me
+npm run deploy:worker
 ```
 
-`wrangler.toml` is already configured with `pages_build_output_dir = "dist"`.
+`wrangler.toml` is configured to deploy the static Astro build from `dist`:
+
+```toml
+[assets]
+directory = "./dist"
+```
+
+### Cloudflare console build settings
+
+If you deploy from Cloudflare console using build + deploy commands:
+
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Non-production branch deploy command: `npx wrangler versions upload`
+- Path: `/`
