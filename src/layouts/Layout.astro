@@ -33,8 +33,38 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+    <script is:inline>
+      (function() {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = saved || (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", theme === "dark" ? "#0f172a" : "#f8fafc");
+      })();
+    </script>
   </head>
   <body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
     <slot />
+    <script is:inline>
+      (function() {
+        const btn = document.getElementById("theme-toggle");
+        function updateIcon() {
+          const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+          btn.textContent = isDark ? "\u2600\uFE0F" : "\uD83C\uDF19";
+        }
+        updateIcon();
+        btn.addEventListener("click", function() {
+          const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+          const next = isDark ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", next);
+          localStorage.setItem("theme", next);
+          const meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", next === "dark" ? "#0f172a" : "#f8fafc");
+          updateIcon();
+        });
+      })();
+    </script>
   </body>
 </html>
