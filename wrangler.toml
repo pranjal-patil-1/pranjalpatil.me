@@ -1,8 +1,9 @@
 name = "pranjalwebsite"
 compatibility_date = "2026-03-02"
+workers_dev = true
 routes = [
-  { pattern = "pranjalpatil.me", custom_domain = true },
-  { pattern = "www.pranjalpatil.me", custom_domain = true }
+  { pattern = "pranjalpatil.me", custom_domain = true, override_existing_origin = true, override_existing_dns_record = true },
+  { pattern = "www.pranjalpatil.me", custom_domain = true, override_existing_origin = true, override_existing_dns_record = true }
 ]
 
 [assets]
