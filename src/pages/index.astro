@@ -83,7 +83,7 @@ const skillGroups = [
 
 <Layout>
   <main class="site-shell">
-    <section class="hero reveal">
+    <section class="hero">
       <div class="hero-layout">
         <div class="hero-copy">
           <p class="eyebrow">Pranjal Patil</p>
@@ -92,9 +92,14 @@ const skillGroups = [
             Head of Engineering (Principal IC) based in Dubai, currently leading core banking services platform at MoniePoint.
           </p>
           <div class="cta-row">
-            <a class="button" href="mailto:pranjalpatil88@gmail.com">Email</a>
-            <a class="button" href="https://www.linkedin.com/in/pranjalpatil01" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="button" href="https://github.com/pranjal-patil-1" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="link" href="#" id="contact-toggle">[Contact]</a>
+            <a class="link" href="https://www.linkedin.com/in/pranjalpatil01" target="_blank" rel="noreferrer">[LinkedIn]</a>
+            <a class="link" href="https://github.com/pranjal-patil-1" target="_blank" rel="noreferrer">[GitHub]</a>
+          </div>
+          <div class="contact-details" id="contact-details">
+            <a href="mailto:pranjalpatil88@gmail.com">pranjalpatil88@gmail.com</a>
+            <span class="separator">|</span>
+            <a href="tel:+971551854920">+971 55 185 4920</a>
           </div>
         </div>
         <div class="hero-photo-wrap">
@@ -103,23 +108,20 @@ const skillGroups = [
       </div>
     </section>
 
-    <section class="card reveal delay-1">
-      <h2>Scale @ Moniepoint </h2>
-      <div class="metrics-grid">
+    <section class="section">
+      <h2>## Scale @ Moniepoint Core Banking Platform</h2>
+      <div class="metrics-list">
         {impact.map((item) => (
-          <article class="metric">
-            <p class="value">{item.value}</p>
-            <p>{item.label}</p>
-          </article>
+          <div class="metric">
+            <span class="value">{item.value}</span> — {item.label}
+          </div>
         ))}
       </div>
     </section>
 
-    <section class="card reveal delay-2">
-      <div class="section-heading">
-        <h2>Professional Experience</h2>
-        <p>Built and operated high-throughput systems across fintech, mobility, and e-commerce.</p>
-      </div>
+    <section class="section">
+      <h2>## Professional Experience</h2>
+      <p class="muted">Built and operated high-throughput systems across fintech, mobility, and e-commerce.</p>
       <div class="timeline">
         {experience.map((job) => (
           <article class="timeline-item">
@@ -135,46 +137,39 @@ const skillGroups = [
         ))}
       </div>
       <div class="earlier">
-        <h3>Earlier Experience</h3>
+        <h3>--- Earlier Experience ---</h3>
         <ul>
           {earlierExperience.map((job) => <li>{job}</li>)}
         </ul>
       </div>
     </section>
 
-    <section class="split reveal delay-3">
-      <article class="card">
-        <h2>Core Skills</h2>
-        <div class="skills-grid">
-          {skillGroups.map((group) => (
-            <div>
-              <h3>{group.title}</h3>
-              <ul>
-                {group.items.map((item) => <li>{item}</li>)}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </article>
-      <article class="card">
-        <h2>Education</h2>
-        <div class="education-block">
-          <h3>National Institute of Technology, Karnataka (NITK)</h3>
-          <p>Master of Technology in Computer Science</p>
-          <p>Surathkal, Karnataka | 2010 - 2012</p>
-        </div>
-        <div class="education-block">
-          <h3>University of Mumbai</h3>
-          <p>Bachelor of Technology in Computer Science</p>
-          <p>Mumbai, Maharashtra | 2006 - 2010</p>
-        </div>
-      </article>
+    <section class="section">
+      <h2>## Core Skills</h2>
+      <div class="skills-list">
+        {skillGroups.map((group) => (
+          <div class="skill-group">
+            <h3>{group.title}:</h3>
+            <p>{group.items.join(" / ")}</p>
+          </div>
+        ))}
+      </div>
     </section>
 
-    <footer class="footer reveal delay-3">
-      <p>Dubai, UAE</p>
-      <p><a href="tel:+971551854920">+971 55 185 4920</a> | <a href="mailto:pranjalpatil88@gmail.com">pranjalpatil88@gmail.com</a></p>
-      <p class="open-source-note"><a href="https://github.com/pranjal-patil-1/pranjalpatil.me" target="_blank" rel="noreferrer">Steal this site &#x27A4; Code MIT</a></p>
-    </footer>
+    <section class="section">
+      <h2>## Education</h2>
+      <div class="education-block">
+        <h3>National Institute of Technology, Karnataka (NITK)</h3>
+        <p>Master of Technology in Computer Science</p>
+        <p>Surathkal, Karnataka | 2010 - 2012</p>
+      </div>
+      <div class="education-block">
+        <h3>University of Mumbai</h3>
+        <p>Bachelor of Technology in Computer Science</p>
+        <p>Mumbai, Maharashtra | 2006 - 2010</p>
+      </div>
+    </section>
+
+    <p class="source-note"><a href="https://github.com/pranjal-patil-1/pranjalpatil.me" target="_blank" rel="noreferrer">[src] MIT licensed</a></p>
   </main>
 </Layout>
