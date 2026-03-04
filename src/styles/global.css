@@ -1,10 +1,10 @@
 :root {
-  --bg: #0a0a0a;
-  --fg: #b0b0b0;
-  --fg-bright: #e0e0e0;
-  --fg-dim: #606060;
+  --bg: #1a2332;
+  --fg: #b0bec5;
+  --fg-bright: #e2e8f0;
+  --fg-dim: #64748b;
   --accent: #00cc88;
-  --rule: #222222;
+  --rule: #2a3a4a;
   --link: #00cc88;
   --link-hover: #00ffaa;
 }

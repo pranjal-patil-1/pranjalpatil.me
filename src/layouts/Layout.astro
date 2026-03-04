@@ -18,7 +18,7 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#1a2332" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -39,7 +39,7 @@ const {
         const theme = saved || "dark";
         document.documentElement.setAttribute("data-theme", theme);
         const meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute("content", theme === "dark" ? "#0a0a0a" : "#f5f5f0");
+        if (meta) meta.setAttribute("content", theme === "dark" ? "#1a2332" : "#f5f5f0");
       })();
     </script>
   </head>
@@ -60,7 +60,7 @@ const {
           document.documentElement.setAttribute("data-theme", next);
           localStorage.setItem("theme", next);
           const meta = document.querySelector('meta[name="theme-color"]');
-          if (meta) meta.setAttribute("content", next === "dark" ? "#0a0a0a" : "#f5f5f0");
+          if (meta) meta.setAttribute("content", next === "dark" ? "#1a2332" : "#f5f5f0");
           updateIcon();
         });
       })();
